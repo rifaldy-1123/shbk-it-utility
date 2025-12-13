@@ -17,7 +17,7 @@
  <div>   
     <div class="search-box">
         <form method="GET" action="{{ url('/elementdetail') }}">
-            <input type="text" name="search" placeholder="Cari data..." value="{{ request('search') }}">
+            <input type="text" name="search" placeholder="Cari detail data..." value="{{ request('search') }}">
             <button type="submit">Search</button>
         </form>
     </div>

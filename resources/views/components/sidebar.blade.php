@@ -5,7 +5,7 @@
         class="w-64 bg-gray-800 text-gray-300 flex flex-col 
                fixed inset-y-0 left-0
                transform transition-transform duration-200 ease-in-out
-               z-50
+               z-60
                lg:translate-x-0"
         :class="open ? 'translate-x-0' : '-translate-x-full'">
 
@@ -35,7 +35,7 @@
 
     <!-- OVERLAY -->
     <div 
-        class="fixed inset-0 bg-black bg-opacity-50 lg:hidden z-40"
+        class="fixed inset-0 bg-black bg-opacity-50 lg:hidden z-51"
         x-show="open"
         x-transition.opacity
         x-on:click="open = false">
@@ -55,7 +55,7 @@
         </div>
 
         <!-- HEADER -->
-        <header class="bg-white shadow-sm sticky top-0 ">
+        <header class="bg-white shadow-sm sticky top-0 z-50">
             <div class="px-4 py-6 sm:px-6 lg:px-8">
                 <h1 class="text-3xl font-bold text-gray-900">
                     @yield('header')
