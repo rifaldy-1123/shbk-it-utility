@@ -7,7 +7,7 @@
 
 @section('content')
 
-<img src="{{ asset('assets/logo/logo-santosa.png') }}">
+<img src="{{ asset('assets/logo/logo-santosa.png') }}"><br>
 
 <div class="menu-container flex flex-wrap justify-center items-center gap-5"">
     <a href="/elementdetail" class="menu-card">Element Detail</a>
