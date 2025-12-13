@@ -1,0 +1,33 @@
+.menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* biar pindah baris */
+    gap: 20px;
+}
+
+.menu-card {
+    flex: 0 0 auto;   /* jangan shrink */
+    width: 200px;     /* lebar tetap */
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 1.4rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-left: 4px solid #3498db;
+    transition: 0.2s ease;
+    text-align: center;
+}
+.menu-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+    border-left-color: #2ecc71;
+    color: #2ecc71;
+    background: #f9fefe;
+}

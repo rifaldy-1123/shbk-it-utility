@@ -1,0 +1,87 @@
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .3s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3.5px;
+    background-color: white;
+    transition: .3s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(25px);
+}
+
+.flag-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;          /* ukuran besar */
+    font-weight: 700;            /* tebal */
+    color: #1f2937;              /* warna gelap elegan */
+    text-align: left;           /* di tengah */
+    text-transform: uppercase;    /* huruf besar semua */
+    letter-spacing: 2px;          /* jarak antar huruf */
+    margin: 10px 0;               /* jarak vertikal */
+    position: relative;           /* untuk efek garis bawah */
+}
+
+/* Efek garis bawah gradient */
+.flag-title::after {
+    content: '';
+    display: block;
+    width: 180px;
+    height: 4px;
+    background: linear-gradient(90deg, #4ade80, #22d3ee);
+    margin: 5px 0 0 0;
+    border-radius: 2px;
+}
+
+.flag-subtitle {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;          /* lebih kecil dari h1 */
+    font-weight: 600;            /* semi-bold */
+    color: #374151;              /* abu gelap, elegan */
+    text-align: left;            /* rata kiri */
+    letter-spacing: 1px;         /* jarak huruf sedikit */
+    margin: 20px 0 20px 0;       /* jarak atas dan bawah */
+    position: relative;
+}
+.flag-subtitle2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2.5rem;          /* lebih kecil dari h1 */
+    font-weight: 600;            /* semi-bold */
+    color: #374151;              /* abu gelap, elegan */
+    text-align: center;            /* rata kiri */
+    letter-spacing: 1px;         /* jarak huruf sedikit */
+    margin: 20px 0 20px 0;       /* jarak atas dan bawah */
+    position: relative;
+}
+

@@ -1,0 +1,102 @@
+/* Container agar tabel terlihat seperti card */
+.table-wrapper {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    margin-top: 20px;
+    overflow-x: auto; /* Responsif */
+}
+
+/* Tabel */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px; /* Jarak antar-bariss */
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+}
+
+/* Header */
+thead th {
+    padding: 12px 16px;
+    background: #f3f6ff;
+    color: #3a4d89;
+    font-weight: 600;
+    text-align: left;
+    border-bottom: 2px solid #e5eaff;
+}
+
+/* Baris */
+tbody tr {
+    background: #ffffff;
+    transition: 0.2s ease;
+}
+
+/* Hover */
+tbody tr:hover {
+    background: #f8faff;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Sel */
+tbody td {
+    padding: 12px 16px;
+    border-top: 1px solid #f1f1f1;
+}
+
+/* Tombol */
+.btn-action {
+    padding: 7px 14px;
+    background: linear-gradient(135deg, #4e9cff, #256cda);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.25s;
+    box-shadow: 0 3px 10px rgba(0, 100, 255, 0.2);
+}
+
+.btn-action:hover {
+    background: linear-gradient(135deg, #1d79ff, #1559c9);
+    box-shadow: 0 4px 14px rgba(0, 80, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Status active */
+.status-active {
+    color: #16a34a;
+    font-weight: 600;
+    background: #e9f9ef;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+/* Row empty */
+tbody tr td[colspan] {
+    background: #fff;
+    border: none;
+    padding: 25px;
+    color: #777;
+}
+
+.search-box {
+    margin: 20px 0;
+    display: flex;
+    justify-content: flex-start; /* Bisa diganti center kalau mau */
+}
+
+.search-box form {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    padding: 8px 12px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    gap: 8px;
+}
+
+/* Input */
