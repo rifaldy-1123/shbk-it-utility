@@ -1,7 +1,7 @@
 .menu-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     flex-wrap: wrap; /* biar pindah baris */
     gap: 20px;
 }

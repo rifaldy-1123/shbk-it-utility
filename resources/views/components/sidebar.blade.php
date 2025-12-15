@@ -25,6 +25,10 @@
             <a href="/updatesep" class="block px-3 py-2 rounded-md hover:bg-white/10 hover:text-white">Update SEP</a>
             <a href="/elementdetail" class="block px-3 py-2 rounded-md hover:bg-white/10 hover:text-white">Element Detail</a><br>
         <div class="flex items-center h-8 px-4 border-b border-gray-700">
+            <strong><h2>Farmasi</h2></strong>
+        </div>
+            <a href="/updatesep" class="block px-3 py-2 rounded-md hover:bg-white/10 hover:text-white">Pembatalan Cancel (Inprogress)</a><br>
+        <div class="flex items-center h-8 px-4 border-b border-gray-700">
             <strong><h2>Logistic 2017</h2></strong>
         </div>
             <a href="/mutasilogistik" class="block px-3 py-2 rounded-md hover:bg-white/10 hover:text-white">Mutasi</a>
