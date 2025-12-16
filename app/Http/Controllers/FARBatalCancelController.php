@@ -30,6 +30,7 @@ class FARBatalCancelController extends Controller
           
         }
         
+        
         return view('farbatalcancel', compact('poheader','podetail'));
     }
 

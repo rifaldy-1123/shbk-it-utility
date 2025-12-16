@@ -32,7 +32,7 @@
 </div>
 <!-- ================================================================ Purchasing Order Header =============================================================== -->
 @if($poheader)
-<h1 class="flag-title">Purchasing Order</h1>
+<h1 class="flag-title">PO Farmasi</h1>
 <div class="box-container">
 
     <!-- RO_HEADER -->
@@ -60,7 +60,7 @@
 </div>
 <!-- ================================================================ End Purchasing Order Header =============================================================== -->
 @else
-<h1 class="flag-title">Purchasing Order</h1>
+<h1 class="flag-title">PO Farmasi</h1>
 <div class="box-card">
     <h2>Purchasing Order Farmasi</h2>
 </div>

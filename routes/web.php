@@ -8,7 +8,7 @@ use App\Http\Controllers\MutasiController;
 use App\Http\Controllers\ReceiveOrderController;
 use App\Http\Controllers\PurchasingOrderController;
 use App\Http\Controllers\FARBatalCancelController;
-
+use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
@@ -45,3 +45,6 @@ Route::get('/purchasingdetail', [PurchasingOrderController::class, 'indexDetail'
 Route::put('/purchasinglogistik-updateHeader', [PurchasingOrderController::class, 'updateHeader'])->name('purchasinglogistik.updateHeader');
 Route::put('/purchasinglogistik-updateDetail', [PurchasingOrderController::class, 'updateDetail'])->name('purchasinglogistik.updateDetail');
 
+/*Route::get('/test-ssl', function () {
+    return Http::get('https://newsapi.org')->status();
+});*/
