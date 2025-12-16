@@ -7,6 +7,8 @@ use App\Http\Controllers\UpdateSEPController;
 use App\Http\Controllers\MutasiController;
 use App\Http\Controllers\ReceiveOrderController;
 use App\Http\Controllers\PurchasingOrderController;
+use App\Http\Controllers\FARBatalCancelController;
+
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
@@ -20,6 +22,13 @@ Route::post('/elementdetail/update/{id}', [ElementDetailController::class, 'upda
 // Update SEP
 Route::get('/updatesep', [UpdateSEPController::class, 'index'])->name('updatesep');
 Route::put('/updatesep-data', [UpdateSEPController::class, 'update'])->name('updatesep.update');
+
+//Batal Cancel Farmasi
+Route::get('/farbatalcancel', [FARBatalCancelController::class, 'index'])->name('farbatalcancel');
+Route::put('/farmasipo-updateHeader', [FARBatalCancelController::class, 'updateHeader'])->name('farmasipo.updateHeader');
+Route::put('/farmasipo-updateDetail', [FARBatalCancelController::class, 'updateDetail'])->name('farmasipo.updateDetail');
+
+
 
 //Mutasi
 Route::get('/mutasilogistik', [MutasiController::class, 'index'])->name('mutasilogistik');

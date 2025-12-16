@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('header', 'Revisi RO Logistik')
+@section('header', 'Pembatalan Cancel Farmasi')
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/search1.css') }}">
     <link rel="stylesheet" href="{{ asset('css/table1.css') }}">
@@ -24,7 +24,7 @@
         </div>
 @endif
 <div class="search-box">
-    <form method="GET" action="{{ url('/purchasinglogistik') }}">
+    <form method="GET" action="{{ url('/farbatalcancel') }}">
         <input type="text" name="no_po" placeholder="Masukan Nomor PO" value="{{ request('no_po') }}">
         <!--<input type="text" name="no_ro" placeholder="Masukan Nomor RO" value="{-{ request('no_ro') }}">-->
         <button type="submit">Search</button>
@@ -40,72 +40,61 @@
         <h2>
              {{ $poheader->PONumber }} 
         </h2>
-    <form action="{{ route('purchasinglogistik.updateHeader', $poheader->PONumber) }}" method="POST">
+    <form action="{{ route('farmasipo.updateHeader', $poheader->PONumber) }}" method="POST">
         @csrf
         @method('PUT')
         <select name="status" id="status" onchange="this.form.submit()">
             <option value="0" {{ $poheader->OrderStatusID == 0 ? 'selected' : '' }}>Work Sheet</option>
             <option value="1" {{ $poheader->OrderStatusID == 1 ? 'selected' : '' }}>On Order</option>
-            <option value="2" {{ $poheader->OrderStatusID == 2 ? 'selected' : '' }}>Full Completed</option>
-            <option value="3" {{ $poheader->OrderStatusID == 3 ? 'selected' : '' }}>Full Cancelled</option>
-            <option value="4" {{ $poheader->OrderStatusID == 4 ? 'selected' : '' }}>Partial Received</option>
-            <option value="5" {{ $poheader->OrderStatusID == 5 ? 'selected' : '' }}>Partial Cancelled</option>
-            <option value="6" {{ $poheader->OrderStatusID == 6 ? 'selected' : '' }}>Partial Completed</option>
+            <option value="2" {{ $poheader->OrderStatusID == 2 ? 'selected' : '' }}>Completed</option>
+            <option value="3" {{ $poheader->OrderStatusID == 3 ? 'selected' : '' }}>Cancel</option>
+            <option value="4" {{ $poheader->OrderStatusID == 4 ? 'selected' : '' }}>Revisi</option>
+            <option value="5" {{ $poheader->OrderStatusID == 5 ? 'selected' : '' }}>Partial Completed</option>
+            <option value="6" {{ $poheader->OrderStatusID == 6 ? 'selected' : '' }}>Partial Receive</option>
+            <option value="7" {{ $poheader->OrderStatusID == 7 ? 'selected' : '' }}>Partial Canceled</option>
         </select>
-        <input type="hidden" name="no_po" value="{{ $poheader->PONumber }}">                
+        <input type="hidden" name="no_po" value="{{ $poheader->PONumber }}">
+        <input type="hidden" name="idpoheader" value="{{ $poheader->IDPOHeader }}">                
     </form><br>
-    <h2>Cek Detail: </h2>
-    <form action="{{ route('purchasinglogistik') }}" method="GET">
-                @csrf
-    <select name="no_ro" id="status" onchange="this.form.submit()">
-        <option value="" disabled selected>Pilih Nomor RO</option>
-        @foreach ($ROlist as $row)
-            <option value="{{ $row->RONumber }}" {{ $row->RONumber == $NoRO ? 'selected' : ''}} >{{ $row->RONumber }}</option>
-        @endforeach
-    </select>
-    <input type="hidden" name="no_po" value="{{ $poheader->PONumber }}"> 
-    </form> 
     </div>
 </div>
 <!-- ================================================================ End Purchasing Order Header =============================================================== -->
 @else
 <h1 class="flag-title">Purchasing Order</h1>
 <div class="box-card">
-    <h2>Purchasing Order</h2>
+    <h2>Purchasing Order Farmasi</h2>
 </div>
 @endif
 <!-- ============================================================================ Detail ================================================================ -->
 @if($podetail)
-<h1 class="flag-title">Detail ({{ $NoRO }})</h1>
+<h1 class="flag-title">Detail</h1>
 <div class="box-container">
     <!-- RO_HEADER -->
 @forelse($podetail ?? [] as $row)
     <div class="box-card">
-    <h2>PO : {{$row->ItemName}} - {{intval($row->QuantityPO)}}</h2>
-    <form action="{{ route('purchasinglogistik.updateDetail', $row->PONumber) }}" method="POST">
+    <h2>{{$row->ItemName}}</h2>
+    <form action="{{ route('farmasipo.updateDetail', $row->PONumber) }}" method="POST">
         @csrf
         @method('PUT') 
         <select name="status" id="status">
             <option value="0" {{ $row->OrderStatusID == 0 ? 'selected' : '' }}>Work Sheet</option>
             <option value="1" {{ $row->OrderStatusID == 1 ? 'selected' : '' }}>On Order</option>
-            <option value="2" {{ $row->OrderStatusID == 2 ? 'selected' : '' }}>Full Completed</option>
-            <option value="3" {{ $row->OrderStatusID == 3 ? 'selected' : '' }}>Full Cancelled</option>
-            <option value="4" {{ $row->OrderStatusID == 4 ? 'selected' : '' }}>Partial Received</option>
-            <option value="5" {{ $row->OrderStatusID == 5 ? 'selected' : '' }}>Partial Cancelled</option>
-            <option value="6" {{ $row->OrderStatusID == 6 ? 'selected' : '' }}>Partial Completed</option>
+            <option value="2" {{ $row->OrderStatusID == 2 ? 'selected' : '' }}>Completed</option>
+            <option value="3" {{ $row->OrderStatusID == 3 ? 'selected' : '' }}>Cancel</option>
+            <option value="4" {{ $row->OrderStatusID == 4 ? 'selected' : '' }}>Revisi</option>
+            <option value="5" {{ $row->OrderStatusID == 5 ? 'selected' : '' }}>Partial Completed</option>
+            <option value="6" {{ $row->OrderStatusID == 6 ? 'selected' : '' }}>Partial Receive</option>
+            <option value="7" {{ $row->OrderStatusID == 7 ? 'selected' : '' }}>Partial Canceled</option>
         </select><br><br>
         <div class="table2">
-            <div class="t2-item"><strong>RECEIVED (RO)</strong></div>
-            <div class="t2-item"><strong>PO_DETAIL</strong></div>
-            <div class="t2-item">{{intval($row->ReceiveinRO)}}</div>
-            <div class="t2-item"><input type="number" name="qty_received" value="{{ intval($row->ReceiveinPODetail) }}"></div>
-            <div class="t2-item"><strong>IsReceived</strong></div>
-            <div class="t2-item">
-                <select name="isreceived" id="receive">
-                    <option value="0" {{ $row->IsReceived == 0 ? 'selected' : '' }}>No</option>
-                    <option value="1" {{ $row->IsReceived == 1 ? 'selected' : '' }}>Yes</option>
-                </select>
-            </div>
+            <div class="t2-item"><strong>Quantity (PO)</strong></div>
+            <div class="t2-item"><strong>Received</strong></div>
+            <div class="t2-item">{{intval($row->Quantity)}}</div>
+            <div class="t2-item">{{ intval($row->Qty_Received) }}</div>
+            <div class="t2-item"><strong>Quantity Cancelled</strong></div>
+            <div class="t2-item"><input type="number" name="qty_cancel" value="{{ intval($row->Qty_Cancelled) }}"></div>
+            <div class="t2-item"><strong>Sub Total Cancelled</strong></div>
+            <div class="t2-item"><input type="number" step="any" name="subtotal_cancel" value="{{ intval($row->SubTotal_Cancelled) }}"></div>
         </div> <br>
         <input type="hidden" name="idpodetail" value="{{ $row->IDPODetail }}"> 
         <button type="submit" class="btn-action">Update</button>              

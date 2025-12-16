@@ -15,7 +15,7 @@
     <div class="menu-container flex flex-wrap justify-center items-center gap-5">
         <a href="/elementdetail" class="menu-card">Element Detail</a>
         <a href="/updatesep" class="menu-card">Update SEP</a>
-        <a href="/updatesep" class="menu-card">Pembatalan<br>Cancel Farmasi</a>
+        <a href="/farbatalcancel" class="menu-card">Pembatalan<br>Cancel Farmasi</a>
     </div>
 </div>
 <br>

@@ -8,7 +8,7 @@ class SCPOHeader extends Model
 {
     //
     protected $connection='sqlsrv1';
-    protected $table = 'PODetail';  
+    protected $table = 'POHeader';  
     public $timestamps = false;
     protected $primaryKey = 'IDPOHeader';
     //protected $keyType = 'string';

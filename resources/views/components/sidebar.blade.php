@@ -27,7 +27,7 @@
         <div class="flex items-center h-8 px-4 border-b border-gray-700">
             <strong><h2>Farmasi</h2></strong>
         </div>
-            <a href="/updatesep" class="block px-3 py-2 rounded-md hover:bg-white/10 hover:text-white">Pembatalan Cancel (Inprogress)</a><br>
+            <a href="/farbatalcancel" class="block px-3 py-2 rounded-md hover:bg-white/10 hover:text-white">Pembatalan Cancel</a><br>
         <div class="flex items-center h-8 px-4 border-b border-gray-700">
             <strong><h2>Logistic 2017</h2></strong>
         </div>
