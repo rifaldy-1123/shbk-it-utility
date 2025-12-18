@@ -40,8 +40,15 @@ class FARBatalCancelController extends Controller
             if($request->no_po == null){
             return redirect()->back()->with('error', 'Data tidak ditemukan! Silahkan cek kembali!');    
             }
+            if (($request->status == 2) || ($request->status == 5)){
+                $isreceive = 1;
+            }
+            else{
+                $isreceive = 0;
+            }
             SCPOHeader::where('PONumber',$request->no_po)
-                ->update(['OrderStatusID' => $request->status]);
+                ->update(['OrderStatusID' => $request->status,
+                            'IsCompletteReceived'=>$isreceive]);
             return redirect()->back();
         }
 
