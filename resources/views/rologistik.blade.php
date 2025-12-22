@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/boxcard1.css') }}">
     <link rel="stylesheet" href="{{ asset('css/switch1.css') }}">
     <link rel="stylesheet" href="{{ asset('css/btndetail1.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/dropdown2.css') }}">
 @endpush
 
 @section('content')
@@ -24,7 +25,11 @@
 <!-- ===================================================================== Receive Order ========================================================================= -->
     <div class="search-box">
         <form method="GET" action="{{ url('/rologistik') }}">
-            <input type="text" name="no_po" placeholder="Masukan Nomor PO" value="{{ request('no_po') }}">
+            <select name="sc_by" id="status" >
+            <option value="0" {{ $ScBy == 0 ? 'selected' : '' }}>Nomor RO</option>
+            <option value="1" {{ $ScBy == 1 ? 'selected' : '' }}>Nomor PO</option>
+        </select>
+            <input type="text" name="no_po" placeholder="Masukan Nomor PO/RO" value="{{ request('no_po') }}">
             <!--<input type="text" name="notransaksi" placeholder="Masukan Nomor Transaksi" value="{s{ request('notransaksi') }s}">-->
             <button type="submit">Search</button>
         </form>
@@ -43,7 +48,8 @@
             <form action="{{ route('rologistik') }}" method="GET">
                 @csrf
                 <input type="hidden" name="no_ro" value="{{ $row->RONumber }}">
-                <input type="hidden" name="no_po" value="{{ $row->PO_Number }}">
+                <input type="hidden" name="no_po" value="{{ $NoPO }}">
+                <input type="hidden" name="sc_by" value="{{ $ScBy }}">
                 <button type="submit" class="btn-detail">Detail</button>
             </form>
         </h2>
@@ -81,6 +87,7 @@
             <form action="{{ route('rologistik') }}" method="GET">
                 @csrf
                 <input type="hidden" name="no_po" value="{{ $NoPO }}">
+                <input type="hidden" name="sc_by" value="{{ $ScBy }}">
                 <button type="submit" class="btn-back">Back</button>
             </form>
         </h2>

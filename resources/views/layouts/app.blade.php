@@ -5,6 +5,7 @@
   <title>Utility</title>
   @vite('resources/css/app.css')
   @stack('styles')
+
   <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body>
@@ -19,6 +20,9 @@
     </div>
   </main>-->
 </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
 
 </body>
 </html>

@@ -15,24 +15,32 @@ class ReceiveOrderController extends Controller
         //dd($request);
         $NoPO    = $request->input('no_po');
         $NoRO = $request->input('no_ro');
-        
+        $ScBy = $request->input('sc_by');
+
         $rodetail = null;
         $roheader = null;
         if ($NoRO) {
             $rodetail = RO_DETAIL::select('RONumber','Quantity','ItemName','Keterangan','GCRecord')
                                   ->where('RONumber', $NoRO)
                                   ->get();
-        return view('rologistik', compact('rodetail','NoPO','roheader'));
+        return view('rologistik', compact('rodetail','NoPO','roheader','ScBy'));
         }
 
         
         if ($NoPO) {
-            $roheader = RO_HEADER::select('RONumber','PO_Number','GCRecord')
+            if($ScBy == 1){
+                $roheader = RO_HEADER::select('RONumber','PO_Number','GCRecord')
                 ->where('PO_Number', $NoPO)
                 ->get();
-            return view('rologistik', compact('roheader','rodetail'));
+            }
+            else{
+                $roheader = RO_HEADER::select('RONumber','PO_Number','GCRecord')
+                ->where('RONumber', $NoPO)
+                ->get();
+            }
+            return view('rologistik', compact('roheader','rodetail','ScBy','NoPO'));
         }
-        return view('rologistik', compact('roheader','rodetail'));
+        return view('rologistik', compact('roheader','rodetail','ScBy','NoPO'));
     }
 
     public function roShow(Request $request)

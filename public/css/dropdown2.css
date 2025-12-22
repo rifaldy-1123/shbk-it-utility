@@ -1,0 +1,59 @@
+#status {
+    width: 110px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: #333;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    appearance: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    /* Arrow icon */
+    background-image: url("data:image/svg+xml;utf8,<svg fill='gray' width='16' height='16' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'><path d='M5.5 7.5L10 12L14.5 7.5' stroke='gray' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+}
+
+/* Hover */
+#status:hover {
+    border-color: #999;
+}
+
+/* Focus */
+#status:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.25);
+}
+
+#receive {
+    width: 85px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: #333;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    appearance: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    /* Arrow icon */
+    background-image: url("data:image/svg+xml;utf8,<svg fill='gray' width='16' height='16' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'><path d='M5.5 7.5L10 12L14.5 7.5' stroke='gray' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+}
+
+/* Hover */
+#receive:hover {
+    border-color: #999;
+}
+
+/* Focus */
+#receive:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.25);
+}

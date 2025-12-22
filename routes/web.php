@@ -44,6 +44,7 @@ Route::get('/purchasinglogistik', [PurchasingOrderController::class, 'index'])->
 Route::get('/purchasingdetail', [PurchasingOrderController::class, 'indexDetail'])->name('purchasingdetail');
 Route::put('/purchasinglogistik-updateHeader', [PurchasingOrderController::class, 'updateHeader'])->name('purchasinglogistik.updateHeader');
 Route::put('/purchasinglogistik-updateDetail', [PurchasingOrderController::class, 'updateDetail'])->name('purchasinglogistik.updateDetail');
+Route::put('/purchasinglogistik-updateVendor', [PurchasingOrderController::class, 'updateVendor'])->name('purchasinglogistik.updateVendor');
 
 /*Route::get('/test-ssl', function () {
     return Http::get('https://newsapi.org')->status();

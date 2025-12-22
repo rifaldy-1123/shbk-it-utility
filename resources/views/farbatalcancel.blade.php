@@ -57,7 +57,7 @@
         <input type="hidden" name="idpoheader" value="{{ $poheader->IDPOHeader }}">                
     </form><br>
     </div>
-</div>
+    </div>
 <!-- ================================================================ End Purchasing Order Header =============================================================== -->
 @else
 <h1 class="flag-title">PO Farmasi</h1>

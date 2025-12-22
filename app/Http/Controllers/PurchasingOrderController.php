@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\PO_HEADER;
 use App\Models\PO_DETAIL;
 use App\Models\RO_HEADER;
-use App\Models\RO_DETAIL;
+use App\Models\Vendor;
 use App\Models\PO_LOG_STATUS;
 
 class PurchasingOrderController extends Controller
@@ -17,12 +17,15 @@ class PurchasingOrderController extends Controller
         //dd($request);
         $NoPO    = $request->input('no_po');
         $NoRO = $request->input('no_ro');
-        
+        $nm_vendor = $request->input('nama_vendor');
+
         $podetail = null;
         $poheader = null;
         $ROlist = null;
+        $vendor = null;
+        $openModal = false;
         if ($NoPO) {
-            $poheader = PO_HEADER::select('PONumber','OrderStatusID')
+            $poheader = PO_HEADER::select('PONumber','OrderStatusID','IDVendor','Vendor')
                 ->where('PONumber', $NoPO)
                 ->first();
             $ROlist = RO_HEADER::select('RONumber')
@@ -47,8 +50,16 @@ class PurchasingOrderController extends Controller
                     //dd($podetail);
             }
         }
-
-        return view('purchasinglogistik', compact('poheader','ROlist','podetail','NoRO'));
+        if($nm_vendor){
+            $openModal = true;
+            $vendor = Vendor::select('IDVendor','VendorName')
+                    ->where('VendorName', 'like', "%{$nm_vendor}%")
+                    ->paginate(3);
+            session()->flash('showModal', true);
+            return view('purchasinglogistik', compact('poheader','ROlist','podetail','NoRO','vendor','openModal'));
+        }
+        
+        return view('purchasinglogistik', compact('poheader','ROlist','podetail','NoRO','vendor','openModal'));
     }
     public function updateHeader(Request $request)
     {
@@ -73,5 +84,19 @@ class PurchasingOrderController extends Controller
                 'Qty_Received' => $request->qty_received
             ]);
         return redirect()->back()->with('success', 'Data berhasil diupdate! Silahkan cek kembali!');
+    }
+
+    public function updateVendor(Request $request)
+    {
+        //dd($request);
+        if($request->no_po == null){
+        return redirect()->back()->with('error', 'Data tidak ditemukan! Silahkan cek kembali!');    
+        }
+        PO_HEADER::where('PONumber',$request->no_po)
+            ->update([
+                'IDVendor' => $request->idvendor,
+                'Vendor' => $request->nm_vendor]);
+                
+        return redirect()->back()->with(['showModal' => false]);
     }
 }
