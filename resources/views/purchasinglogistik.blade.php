@@ -152,7 +152,7 @@
               
               <div class="search-box">
                   <form method="GET" action="{{ url('/purchasinglogistik') }}">
-                      <input type="text" name="nama_vendor" placeholder="Cari Nama Vendor" >
+                      <input type="text" name="nama_vendor" placeholder="Cari Nama Vendor" minlength="2" required>
                       <input type="hidden" name="no_po" value="{{ $poheader->PONumber ?? '' }}">
                       <!--<input type="text" name="no_ro" placeholder="Masukan Nomor RO" value="{-{ request('no_ro') }}">-->
                       <button type="submit">Search</button>

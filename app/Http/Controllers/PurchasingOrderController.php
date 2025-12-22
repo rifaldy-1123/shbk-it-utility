@@ -54,7 +54,7 @@ class PurchasingOrderController extends Controller
             $openModal = true;
             $vendor = Vendor::select('IDVendor','VendorName')
                     ->where('VendorName', 'like', "%{$nm_vendor}%")
-                    ->paginate(3);
+                    ->paginate(5);
             session()->flash('showModal', true);
             return view('purchasinglogistik', compact('poheader','ROlist','podetail','NoRO','vendor','openModal'));
         }
