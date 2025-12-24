@@ -29,12 +29,12 @@ class ReceiveOrderController extends Controller
         
         if ($NoPO) {
             if($ScBy == 1){
-                $roheader = RO_HEADER::select('RONumber','PO_Number','GCRecord')
+                $roheader = RO_HEADER::select('RONumber','PO_Number','GCRecord','Vendor')
                 ->where('PO_Number', $NoPO)
                 ->get();
             }
             else{
-                $roheader = RO_HEADER::select('RONumber','PO_Number','GCRecord')
+                $roheader = RO_HEADER::select('RONumber','PO_Number','GCRecord','Vendor')
                 ->where('RONumber', $NoPO)
                 ->get();
             }

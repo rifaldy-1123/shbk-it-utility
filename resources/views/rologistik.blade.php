@@ -56,6 +56,7 @@
         <form action="{{ route('ro.show') }}" method="POST" class="switch-form">
             @csrf
             @method('PATCH')
+            <input type="text" class="vendor" readonly name="nm_vendor" value="{{ $row->Vendor }}">
         <h3 class="flag-subtitle"> {{ $row->RONumber }} </h3> 
                 <label class="switch">
                     <input type="checkbox" name="GCRecord" class="gcrecord-switch"

@@ -183,7 +183,7 @@
                                             <input type="hidden" name="no_po" value="{{ $poheader->PONumber ?? '' }}">
                                             <input type="hidden" name="idvendor" value="{{ $row->IDVendor ?? '' }}">
                                             <input type="hidden" name="nm_vendor" value="{{ $row->VendorName ?? '' }}">
-                                            <button type="submit" command="close" commandfor="dialog" class="btn-action">Pilih</button>
+                                            <button type="submit" command="close" commandfor="dialog" class="btn-action">Ganti</button>
                                         </form>
 
                                         </td>

@@ -96,6 +96,10 @@ class PurchasingOrderController extends Controller
             ->update([
                 'IDVendor' => $request->idvendor,
                 'Vendor' => $request->nm_vendor]);
+        RO_HEADER::where('PO_Number',$request->no_po)
+            ->update([
+                'IDVendor' => $request->idvendor,
+                'Vendor' => $request->nm_vendor]);
                 
         return redirect()->back()->with(['showModal' => false]);
     }
