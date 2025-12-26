@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\INLogger;
-use App\Models\RO_HEADER;
-use App\Models\RO_DETAIL;
-use App\Models\PO_LOG_STATUS;
+use App\Models\Logistic2017\INLogger;
+use App\Models\Logistic2017\RO_HEADER;
+use App\Models\Logistic2017\RO_DETAIL;
+use App\Models\Logistic2017\PO_LOG_STATUS;
 
 class ReceiveOrderController extends Controller
 {

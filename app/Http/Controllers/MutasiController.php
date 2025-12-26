@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\INMutasi;
-use App\Models\INMutasiD;
-use App\Models\INLogger;
+use App\Models\Logistic2017\INMutasi;
+use App\Models\Logistic2017\INMutasiD;
+use App\Models\Logistic2017\INLogger;
 
 class MutasiController extends Controller
 {

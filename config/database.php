@@ -126,6 +126,21 @@ return [
             'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'true'),
         ],
 
+        'sqlsrv3' => [
+            'driver' => env('DB_CONNECTION3','sqlsrv'),
+            'url' => env('DB_URL3'),
+            'host' => env('DB_HOST3', 'localhost'),
+            'port' => env('DB_PORT3', '1433'),
+            'database' => env('DB_DATABASE3', 'laravel'),
+            'username' => env('DB_USERNAME3', 'root'),
+            'password' => env('DB_PASSWORD3', ''),
+            'charset' => env('DB_CHARSET3', 'utf8'),
+            'prefix' => '',
+            'prefix_indexes' => true,
+            // 'encrypt' => env('DB_ENCRYPT', 'yes'),
+            'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'true'),
+        ],
+
     ],
 
     /*

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ACT;
-use App\Models\OEFarmasi;
+use App\Models\Santosacare\ACT;
+use App\Models\Santosacare\OEFarmasi;
 
 class UpdateSEPController extends Controller
 {

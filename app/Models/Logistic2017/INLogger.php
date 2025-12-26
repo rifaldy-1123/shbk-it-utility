@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Logistic2017;
 
 use Illuminate\Database\Eloquent\Model;
 
-class INMutasiD extends Model
+class INLogger extends Model
 {
+    //
     protected $connection='sqlsrv2';
-    protected $table = 'INMutasiD';  
+    protected $table = 'INLogger';  
     public $timestamps = false;
-    protected $primaryKey = 'NoInvoice';
+    protected $primaryKey = 'NoDokumen';
     protected $keyType = 'string';
     protected $fillable = ['GCRecord'];
 }

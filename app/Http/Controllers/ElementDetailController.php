@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ElementDetail;
+use App\Models\Santosacare\ElementDetail;
 
 class ElementDetailController extends Controller
 {

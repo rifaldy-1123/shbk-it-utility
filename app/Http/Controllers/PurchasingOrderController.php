@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\PO_HEADER;
-use App\Models\PO_DETAIL;
-use App\Models\RO_HEADER;
-use App\Models\Vendor;
-use App\Models\PO_LOG_STATUS;
+use App\Models\Logistic2017\PO_HEADER;
+use App\Models\Logistic2017\PO_DETAIL;
+use App\Models\Logistic2017\RO_HEADER;
+use App\Models\Logistic2017\Vendor;
+use App\Models\Logistic2017\PO_LOG_STATUS;
 
 class PurchasingOrderController extends Controller
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Logistic2017;
 
 use Illuminate\Database\Eloquent\Model;
 

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\SCPOHeader;
-use App\Models\SCPODetail;
+use App\Models\Santosacare\SCPOHeader;
+use App\Models\Santosacare\SCPODetail;
 
 class FARBatalCancelController extends Controller
 {

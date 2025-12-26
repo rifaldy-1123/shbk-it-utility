@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Logistic2017;
 
 use Illuminate\Database\Eloquent\Model;
 
-class RO_DETAIL extends Model
+class RO_HEADER extends Model
 {
     //
-     protected $connection='sqlsrv2';
-    protected $table = 'RO_DETAIL';  
+    protected $connection='sqlsrv2';
+    protected $table = 'RO_HEADER';  
     public $timestamps = false;
     protected $primaryKey = 'RONumber';
     protected $keyType = 'string';

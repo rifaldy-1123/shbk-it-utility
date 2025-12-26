@@ -33,7 +33,11 @@
         </div>
             <a href="/mutasilogistik" class="block px-3 py-2 rounded-md hover:bg-white/10 hover:text-white">Mutasi</a>
             <a href="/rologistik" class="block px-3 py-2 rounded-md hover:bg-white/10 hover:text-white">Receive Order</a>
-            <a href="/purchasinglogistik" class="block px-3 py-2 rounded-md hover:bg-white/10 hover:text-white">Purchasing Order</a>
+            <a href="/purchasinglogistik" class="block px-3 py-2 rounded-md hover:bg-white/10 hover:text-white">Purchasing Order</a><br>
+        <div class="flex items-center h-8 px-4 border-b border-gray-700">
+            <strong><h2>Users Manager</h2></strong>
+        </div>
+            <a href="/" class="block px-3 py-2 rounded-md hover:bg-white/10 hover:text-white">Finance</a>
         </nav>
     </aside>
 

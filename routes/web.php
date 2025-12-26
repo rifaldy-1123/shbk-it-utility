@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\ElementDetail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ElementDetailController;
 use App\Http\Controllers\UpdateSEPController;
@@ -8,8 +7,6 @@ use App\Http\Controllers\MutasiController;
 use App\Http\Controllers\ReceiveOrderController;
 use App\Http\Controllers\PurchasingOrderController;
 use App\Http\Controllers\FARBatalCancelController;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('home');
